@@ -1,0 +1,17 @@
+﻿  detectEdges.cpp
+  thesis.cpp
+D:\Egyetem\thesis\thesis\thesis\thesis.h(8,1): warning C4005: 'DllExport': macro redefinition
+D:\Egyetem\thesis\thesis\thesis\detectEdges.h(19): message : see previous definition of 'DllExport'
+D:\Egyetem\thesis\thesis\thesis\thesis.h(10,49): warning C4190: 'imageProcess' has C-linkage specified, but returns UDT 'std::vector<uchar,std::allocator<uchar>>' which is incompatible with C
+C:\opencv\build\include\opencv2\core\mat.hpp(2681): message : see declaration of 'std::vector<uchar,std::allocator<uchar>>'
+  main.cpp
+D:\Egyetem\thesis\thesis\thesis\thesis.h(8,1): warning C4005: 'DllExport': macro redefinition
+D:\Egyetem\thesis\thesis\thesis\detectedges.h(19): message : see previous definition of 'DllExport'
+D:\Egyetem\thesis\thesis\thesis\thesis.h(10,49): warning C4190: 'imageProcess' has C-linkage specified, but returns UDT 'std::vector<uchar,std::allocator<uchar>>' which is incompatible with C
+C:\opencv\build\include\opencv2\core\mat.hpp(2681): message : see declaration of 'std::vector<uchar,std::allocator<uchar>>'
+     Creating library D:\Egyetem\thesis\thesis\x64\Release\thesis.lib and object D:\Egyetem\thesis\thesis\x64\Release\thesis.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 371 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  thesis.vcxproj -> D:\Egyetem\thesis\thesis\x64\Release\thesis.dll

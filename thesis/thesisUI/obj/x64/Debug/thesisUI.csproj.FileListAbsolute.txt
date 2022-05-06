@@ -1,0 +1,11 @@
+D:\Egyetem\thesis\thesis\x64\Debug\thesisUI.exe.config
+D:\Egyetem\thesis\thesis\x64\Debug\thesisUI.exe
+D:\Egyetem\thesis\thesis\x64\Debug\thesisUI.pdb
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.ChildWindow.resources
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.Form1.resources
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.MainForm.resources
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.Properties.Resources.resources
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.csproj.GenerateResource.cache
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.csproj.CoreCompileInputs.cache
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.exe
+D:\Egyetem\thesis\thesis\thesisUI\obj\x64\Debug\thesisUI.pdb
