@@ -1,11 +1,4 @@
-﻿  detectEdges.cpp
-  thesis.cpp
-D:\Egyetem\thesis\thesis\thesis\thesis.h(4,50): warning C4518: '__declspec(dllexport)': storage-class or type specifier(s) unexpected here; ignored
-D:\Egyetem\thesis\thesis\thesis\thesis.h(4,50): warning C4502: 'linkage specification' requires use of keyword 'extern' and must precede all other specifiers
-  main.cpp
-D:\Egyetem\thesis\thesis\thesis\thesis.h(4,50): warning C4518: '__declspec(dllexport)': storage-class or type specifier(s) unexpected here; ignored
-D:\Egyetem\thesis\thesis\thesis\thesis.h(4,50): warning C4502: 'linkage specification' requires use of keyword 'extern' and must precede all other specifiers
-  Generating Code...
+﻿  thesis.cpp
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
 detectEdges.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
      Creating library D:\Egyetem\thesis\thesis\x64\Debug\thesis.lib and object D:\Egyetem\thesis\thesis\x64\Debug\thesis.exp

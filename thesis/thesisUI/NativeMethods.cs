@@ -5,12 +5,13 @@ namespace thesisUI
 {
     internal static class NativeMethods
     {
-        [DllImport("thesis.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = false, 
-            SetLastError = false, CharSet = CharSet.Auto, ThrowOnUnmappableChar = true)]
+        [DllImport("thesis.dll", CallingConvention = CallingConvention.StdCall, EntryPoint = "imageProcess"
+            , ExactSpelling = true, SetLastError = false, CharSet = CharSet.Ansi)]
         //[DllImport("thesis.dll", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         //[DllImport("thesis.dll", CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
-        //[return: MarshalAs(unmanagedType: UnmanagedType.U4)]
-        internal static extern Int32 imageProcess([MarshalAs(UnmanagedType.LPStr)] string filename);
+        [return: MarshalAs(UnmanagedType.SysInt)]
+        public static extern IntPtr imageProcess([MarshalAs(UnmanagedType.AnsiBStr)] string filename);
+        //internal static extern IntPtr imageProcess();
 
     }
 }

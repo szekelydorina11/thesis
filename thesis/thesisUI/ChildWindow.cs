@@ -47,9 +47,11 @@ namespace thesisUI
 
         private void btnCollimate_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("file_name:" + m_fileName);
             var result = 
                 NativeMethods.imageProcess(m_fileName);
-
+            m_imgThre = new Bitmap("imgThre.jpg");
+            LoadImage(m_imgThre);
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -195,6 +197,7 @@ namespace thesisUI
 
         private string m_fileName;
         private Bitmap m_originalImage;
+        private Bitmap m_imgThre;
 
         private void trackBar1_MouseUp(object sender, MouseEventArgs e)
         {

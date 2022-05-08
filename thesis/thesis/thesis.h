@@ -1,13 +1,13 @@
 #pragma once
 
 #include "detectEdges.h"
-DllExport extern "C" __declspec( dllexport ) int imageProcess(char* path);
 #include <stdio.h>
 #include <vector>
 #include <bitset>
 #include <cstddef>
 
+#define DllExport __declspec( dllexport )
 
-__declspec(dllexport) int imageProcess(char* path);
+extern "C" DllExport int imageProcess(char* path);
 
 //DllExport vector<uchar> imageProcess(char* path);

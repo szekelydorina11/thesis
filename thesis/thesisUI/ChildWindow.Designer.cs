@@ -58,10 +58,12 @@
             // 
             // pbOriginalImage
             // 
-            this.pbOriginalImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbOriginalImage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbOriginalImage.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pbOriginalImage.Location = new System.Drawing.Point(0, 0);
+            this.pbOriginalImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbOriginalImage.Name = "pbOriginalImage";
-            this.pbOriginalImage.Size = new System.Drawing.Size(581, 450);
+            this.pbOriginalImage.Size = new System.Drawing.Size(495, 554);
             this.pbOriginalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbOriginalImage.TabIndex = 0;
             this.pbOriginalImage.TabStop = false;
@@ -71,6 +73,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -80,8 +83,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 581;
+            this.splitContainer1.Size = new System.Drawing.Size(1182, 554);
+            this.splitContainer1.SplitterDistance = 962;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -95,17 +99,19 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(215, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(215, 554);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // pbHistogram
             // 
             this.pbHistogram.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbHistogram.Location = new System.Drawing.Point(3, 3);
+            this.pbHistogram.Location = new System.Drawing.Point(4, 4);
+            this.pbHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbHistogram.Name = "pbHistogram";
-            this.pbHistogram.Size = new System.Drawing.Size(209, 95);
+            this.pbHistogram.Size = new System.Drawing.Size(279, 117);
             this.pbHistogram.TabIndex = 2;
             this.pbHistogram.TabStop = false;
             // 
@@ -118,20 +124,22 @@
             this.tableLayoutPanel1.Controls.Add(this.pbBlue, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pbCombined, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pbRed, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 104);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 129);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(209, 129);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(279, 159);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // pbGreen
             // 
             this.pbGreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbGreen.Location = new System.Drawing.Point(107, 3);
+            this.pbGreen.Location = new System.Drawing.Point(143, 4);
+            this.pbGreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbGreen.Name = "pbGreen";
-            this.pbGreen.Size = new System.Drawing.Size(99, 58);
+            this.pbGreen.Size = new System.Drawing.Size(132, 71);
             this.pbGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbGreen.TabIndex = 1;
             this.pbGreen.TabStop = false;
@@ -141,9 +149,10 @@
             // pbBlue
             // 
             this.pbBlue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbBlue.Location = new System.Drawing.Point(3, 67);
+            this.pbBlue.Location = new System.Drawing.Point(4, 83);
+            this.pbBlue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbBlue.Name = "pbBlue";
-            this.pbBlue.Size = new System.Drawing.Size(98, 59);
+            this.pbBlue.Size = new System.Drawing.Size(131, 72);
             this.pbBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBlue.TabIndex = 2;
             this.pbBlue.TabStop = false;
@@ -153,9 +162,10 @@
             // pbCombined
             // 
             this.pbCombined.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbCombined.Location = new System.Drawing.Point(107, 67);
+            this.pbCombined.Location = new System.Drawing.Point(143, 83);
+            this.pbCombined.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbCombined.Name = "pbCombined";
-            this.pbCombined.Size = new System.Drawing.Size(99, 59);
+            this.pbCombined.Size = new System.Drawing.Size(132, 72);
             this.pbCombined.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCombined.TabIndex = 3;
             this.pbCombined.TabStop = false;
@@ -165,9 +175,10 @@
             // pbRed
             // 
             this.pbRed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbRed.Location = new System.Drawing.Point(3, 3);
+            this.pbRed.Location = new System.Drawing.Point(4, 4);
+            this.pbRed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbRed.Name = "pbRed";
-            this.pbRed.Size = new System.Drawing.Size(98, 58);
+            this.pbRed.Size = new System.Drawing.Size(131, 71);
             this.pbRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRed.TabIndex = 0;
             this.pbRed.TabStop = false;
@@ -175,9 +186,10 @@
             // 
             // btnInvert
             // 
-            this.btnInvert.Location = new System.Drawing.Point(3, 239);
+            this.btnInvert.Location = new System.Drawing.Point(4, 296);
+            this.btnInvert.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInvert.Name = "btnInvert";
-            this.btnInvert.Size = new System.Drawing.Size(209, 23);
+            this.btnInvert.Size = new System.Drawing.Size(279, 28);
             this.btnInvert.TabIndex = 0;
             this.btnInvert.Text = "Invert image";
             this.btnInvert.UseVisualStyleBackColor = true;
@@ -185,9 +197,10 @@
             // 
             // btnCollimate
             // 
-            this.btnCollimate.Location = new System.Drawing.Point(3, 268);
+            this.btnCollimate.Location = new System.Drawing.Point(4, 332);
+            this.btnCollimate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCollimate.Name = "btnCollimate";
-            this.btnCollimate.Size = new System.Drawing.Size(209, 23);
+            this.btnCollimate.Size = new System.Drawing.Size(279, 28);
             this.btnCollimate.TabIndex = 1;
             this.btnCollimate.Text = "Find edges";
             this.btnCollimate.UseVisualStyleBackColor = true;
@@ -195,9 +208,10 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(3, 297);
+            this.btnRestore.Location = new System.Drawing.Point(4, 368);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(209, 23);
+            this.btnRestore.Size = new System.Drawing.Size(279, 28);
             this.btnRestore.TabIndex = 3;
             this.btnRestore.Text = "Restore original";
             this.btnRestore.UseVisualStyleBackColor = true;
@@ -205,20 +219,22 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 326);
+            this.trackBar1.Location = new System.Drawing.Point(4, 404);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar1.Maximum = 255;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(209, 45);
+            this.trackBar1.Size = new System.Drawing.Size(279, 58);
             this.trackBar1.TabIndex = 5;
             this.trackBar1.Value = 128;
             this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
             // 
             // ChildWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1182, 554);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChildWindow";
             this.Text = "ChildWindow";
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginalImage)).EndInit();

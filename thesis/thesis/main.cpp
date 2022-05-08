@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[]) {
 
-	imageProcess(argv[1]);
+	//imageProcess(argv[1]);
 
 	return 0;
 }

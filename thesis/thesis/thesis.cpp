@@ -2,11 +2,13 @@
 
 #include <stdio.h>
 #include <vector>
+#include <string>
 #include <cstddef>
 #include <bitset>
 
 
 int imageProcess(char* path)
+//int imageProcess()
 //vector<uchar> imageProcess(char* path)
 {
 	Mat imgResized, imgThre;
@@ -20,10 +22,19 @@ int imageProcess(char* path)
 	//std::string path = "D:\\Egyetem\\thesis\\paint4.2.png"; imgOriginal = imread(path);
 	//std::string path = "D:\\Egyetem\\thesis\\paint5.png"; imgOriginal = imread(path);
 
-	//std::string path = "D:\\Egyetem\\thesis\\scan1.jpg"; imgOriginal = imread(path);
-	//std::string path = "D:\\Egyetem\\thesis\\scan2.jpg"; imgOriginal = imread(path);
+	//std::string path2 = "D:\\Egyetem\\thesis\\scan1.jpg"; Mat imgOriginal = imread(path2);
+	//string path = "D:\\Egyetem\\thesis\\scan2.jpg"; imgOriginal = imread(path);
+	
+	cout << "path: " << path << "\n";
 
 	Mat imgOriginal = imread(path);
+	
+	if (imgOriginal.empty())
+	{
+		std::cout << "Could not read the image: " << path << std::endl;
+		return 1;
+	}
+
 
 	//double s = 0.5;
 
@@ -74,7 +85,7 @@ int imageProcess(char* path)
 
 	//return imgThre;
 
-	bool check = imwrite("..\\saved_images\\imgThre.jpg", imgThre);
+	bool check = imwrite("imgThre.jpg", imgThre);
 
 	// if the image is not saved
 	if (check == false) {
@@ -83,7 +94,19 @@ int imageProcess(char* path)
 		// wait for any key to be pressed
 		cin.get();
 		return -1;
-	}
+	} else 
+		cout << "Saving the image, PASSED" << endl;
+	
+	check = imwrite("imgResized.jpg", imgResized);
+
+	if (check == false) {
+		cout << "Mission - Saving the image, FAILED" << endl;
+
+		// wait for any key to be pressed
+		cin.get();
+		return -1;
+	} else 
+		cout << "Saving the image, PASSED" << endl;
 
 	return 0;
 

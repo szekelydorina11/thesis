@@ -16,11 +16,6 @@
 using namespace cv;
 using namespace std;
 
-#define DllExport   __declspec( dllexport )
-
-//extern "C"  DetectEdges * createMyClass();
-
-
 class DetectEdges {
 public:
 
