@@ -22,7 +22,7 @@ namespace thesisUI
 
         internal void Save()
         {
-            pbOriginalImage.Image.Save(m_fileName);
+            main.Image.Save(m_fileName);
         }
 
         internal void SaveAs()
@@ -33,7 +33,7 @@ namespace thesisUI
             };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                pbOriginalImage.Image.Save(sfd.FileName);
+                main.Image.Save(sfd.FileName);
                 m_fileName = sfd.FileName;
                 Text = Path.GetFileName(m_fileName);
             }
@@ -41,7 +41,7 @@ namespace thesisUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ImageTransformer transformer = new ImageTransformer((Bitmap)pbOriginalImage.Image);
+            ImageTransformer transformer = new ImageTransformer((Bitmap)main.Image);
             m_originalImage = transformer.Transform(new InverseTransform());
             LoadImage(m_originalImage);
         }
@@ -65,18 +65,22 @@ namespace thesisUI
             new_file_name = result + "_imgThre.jpg";
             //m_imgThre = new Bitmap(new_file_name);
             pictureBox1.Image = m_imgThre;
+            pictureBox1.Visible = true;
 
             new_file_name = result + "_GaussianBlur.jpg";
             m_imgBlur = new Bitmap(new_file_name);
             pictureBox2.Image = m_imgBlur;
+            pictureBox2.Visible = true;
 
             new_file_name = result + "_Canny.jpg";
             m_imgCanny = new Bitmap(new_file_name);
             pictureBox3.Image = m_imgCanny;
+            pictureBox3.Visible = true;
 
             new_file_name = result + "_Dilate.jpg";
             m_imgDilate = new Bitmap(new_file_name);
             pictureBox4.Image = m_imgDilate;
+            pictureBox4.Visible = true;
 
             /*new_file_name = result + "_Erode.jpg";
             m_imgCanny = new Bitmap(new_file_name);
@@ -221,7 +225,7 @@ namespace thesisUI
 
         private void pbRed_Click(object sender, EventArgs e)
         {
-            pbOriginalImage.Image = ((PictureBox)sender).Image;
+            main.Image = ((PictureBox)sender).Image;
         }
 
         private string m_fileName;
