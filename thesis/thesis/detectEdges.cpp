@@ -12,23 +12,28 @@
 using namespace cv;
 using namespace std;
 
-Mat imgGray, imgBlur, imgCanny, imgDil;
+Mat imgGray, imgBlur, imgCanny, imgDil, imgErode;
 
-float w = 420, h = 596;
+string DetectEdges::imageName;
 
+DetectEdges::DetectEdges()
+{
+    string imageName = "";
+}
 
-DetectEdges::DetectEdges() {}
-
-Mat DetectEdges::preProcessing(Mat img)
+Mat DetectEdges::imageProcessing(Mat img)
 {
     cvtColor(img, imgGray, COLOR_BGR2GRAY);
     GaussianBlur(imgGray, imgBlur, Size(3, 3), 3, 0);
+    saveImage(imgBlur, "GaussianBlur", getImageName());
     Canny(imgBlur, imgCanny, 25, 75);
+    saveImage(imgCanny, "Canny", getImageName());
     Mat kernel = getStructuringElement(MORPH_RECT, Size(3, 3));
     dilate(imgCanny, imgDil, kernel);
-    //erode(imgDil, imgErode, kernel);
-    return imgDil;
-    //return imgBlur;
+    saveImage(imgDil, "Dilate", getImageName());
+    erode(imgDil, imgErode, kernel);
+    saveImage(imgErode, "Erode", getImageName());
+    return imgErode;
 }
 
 vector<Point> DetectEdges::getContours(Mat image, Mat imgResized) {
@@ -111,9 +116,9 @@ void DetectEdges::drawPoints(vector<Point> points, Scalar color, Mat imgResized)
         //circle(imgResized, points[i], 10, color, FILLED);
         //putText(imgResized, to_string(i), points[i], FONT_HERSHEY_PLAIN, 4, color, 4);
         if (i == ((int)points.size() - 1))
-            cv::line(imgResized, points[i], points[0], color, 2);
+            cv::line(imgResized, points[i], points[0], Scalar(0, 255, 0), 2);
         else
-            cv::line(imgResized, points[i], points[i + 1], color, 2);
+            cv::line(imgResized, points[i], points[i + 1], Scalar(0, 255, 0), 2);
     }
 }
 
@@ -171,7 +176,33 @@ vector<Point> DetectEdges::reorder(vector<Point> points)
 }
 
 
+int DetectEdges::saveImage(Mat image, String process, String path) {
+    String name = DetectEdges::getImageName();
+    String file_name = name + "_" + process + ".jpg";
+    bool check = imwrite(file_name, image);
 
+    // if the image is not saved
+    if (check == false) {
+        cout << "Mission - Saving the image, FAILED" << endl;
+
+        // wait for any key to be pressed
+        cin.get();
+        return -1;
+    }
+    else
+        cout << "Saving the image, PASSED" << endl;
+    return 0;
+}
+
+void DetectEdges::setImageName(String path) {
+    string base_filename = path.substr(path.find_last_of("/\\") + 1);
+    string::size_type const p(base_filename.find_last_of('.'));
+    imageName = base_filename.substr(0, p);
+}
+
+String DetectEdges::getImageName() {
+    return imageName;
+}
 
 //#include <stdio.h>
 //#include <iostream>

@@ -8,7 +8,8 @@ using System.Windows.Forms;
 namespace thesisUI
 {
     public partial class ChildWindow : Form
-    {
+    { 
+
         public ChildWindow(string fileName)
         {
             InitializeComponent();
@@ -47,11 +48,39 @@ namespace thesisUI
 
         private void btnCollimate_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("file_name:" + m_fileName);
-            var result = 
-                NativeMethods.imageProcess(m_fileName);
-            m_imgThre = new Bitmap("imgThre.jpg");
+            Console.Write("file_name: " + m_fileName);
+
+            var result = Path.GetFileNameWithoutExtension(m_fileName);
+            Console.Write("result: " + result);
+
+            NativeMethods.imageProcess(m_fileName);
+            //if (result == "") return;
+
+            String new_file_name = result + "_imgThre.jpg";
+            Console.WriteLine("new_file_name: " + new_file_name);
+
+            m_imgThre = new Bitmap(new_file_name);
             LoadImage(m_imgThre);
+
+            new_file_name = result + "_imgThre.jpg";
+            //m_imgThre = new Bitmap(new_file_name);
+            pictureBox1.Image = m_imgThre;
+
+            new_file_name = result + "_GaussianBlur.jpg";
+            m_imgBlur = new Bitmap(new_file_name);
+            pictureBox2.Image = m_imgBlur;
+
+            new_file_name = result + "_Canny.jpg";
+            m_imgCanny = new Bitmap(new_file_name);
+            pictureBox3.Image = m_imgCanny;
+
+            new_file_name = result + "_Dilate.jpg";
+            m_imgDilate = new Bitmap(new_file_name);
+            pictureBox4.Image = m_imgDilate;
+
+            /*new_file_name = result + "_Erode.jpg";
+            m_imgCanny = new Bitmap(new_file_name);
+            pictureBox2.Image = m_imgErode;*/
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -63,7 +92,7 @@ namespace thesisUI
 
         private void LoadImage(Bitmap image)
         {
-            ThreadSafe(c => c.Image = image, pbOriginalImage);
+            ThreadSafe(c => c.Image = image, main);
             var imageClip = new Rectangle(new Point(0, 0), image.Size);
             var copy = image.Clone(imageClip, System.Drawing.Imaging.PixelFormat.Format32bppRgb);
             GenerateHistogram(copy);
@@ -198,6 +227,9 @@ namespace thesisUI
         private string m_fileName;
         private Bitmap m_originalImage;
         private Bitmap m_imgThre;
+        private Bitmap m_imgBlur;
+        private Bitmap m_imgCanny;
+        private Bitmap m_imgDilate;
 
         private void trackBar1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -205,6 +237,66 @@ namespace thesisUI
             ImageTransformer transformer = new ImageTransformer(m_originalImage);
             var bmp = transformer.Transform(new SetBrightnessTransform(value));
             LoadImage(bmp);
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (main.Image == null)
+            {
+                MessageBox.Show("Choose picture!");
+            }
+            else
+            {
+                var img1 = pictureBox1.Image;
+                //pictureBox1.Image = main.Image;
+                main.Image = img1;
+            }
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            if (main.Image == null)
+            {
+                MessageBox.Show("Choose picture!");
+            }
+            else
+            {
+                var img3 = pictureBox3.Image;
+                //pictureBox3.Image = main.Image;
+                main.Image = img3;
+            }
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            if (main.Image == null)
+            {
+                MessageBox.Show("Choose picture!");
+            }
+            else
+            {
+                var img2 = pictureBox2.Image;
+                //pictureBox2.Image = main.Image;
+                main.Image = img2;
+            }
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            if (main.Image == null)
+            {
+                MessageBox.Show("Choose picture!");
+            }
+            else
+            {
+                var img4 = pictureBox4.Image;
+                //pictureBox4.Image = main.Image;
+                main.Image = img4;
+            }
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
 
         }
     }

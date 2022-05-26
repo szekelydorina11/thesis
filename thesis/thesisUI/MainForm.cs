@@ -5,15 +5,32 @@ namespace thesisUI
 {
     public partial class MainForm : Form
     {
+        bool isOpen = false;
         public MainForm()
         {
             InitializeComponent();
+            if (isOpen == false)
+            {
+                tileToolStripMenuItem.Enabled = false;
+                exitToolStripMenuItem.Enabled = false;
+                saveAsToolStripMenuItem.Enabled = false;
+                saveToolStripMenuItem.Enabled = false;
+                windowsToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                tileToolStripMenuItem.Enabled = true;
+                exitToolStripMenuItem.Enabled = true;
+                saveAsToolStripMenuItem.Enabled = true;
+                saveToolStripMenuItem.Enabled = true;
+                windowsToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Suported files|*.png;*.jpg;*.jpeg|All files|*.*";
+            ofd.Filter = "Suported files|*.png;*.jpg;*.jpeg";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 ChildWindow window = new ChildWindow(ofd.FileName)
@@ -22,6 +39,12 @@ namespace thesisUI
                     WindowState = FormWindowState.Maximized
                 };
                 window.Show();
+                isOpen = true;
+                tileToolStripMenuItem.Enabled = true;
+                exitToolStripMenuItem.Enabled = true;
+                saveAsToolStripMenuItem.Enabled = true;
+                saveToolStripMenuItem.Enabled = true;
+                windowsToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -64,14 +87,29 @@ namespace thesisUI
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChildWindow window = (ChildWindow)this.ActiveMdiChild;
-            window.Save();
+            ChildWindow window = null;
+            if (window != null) {
+                window = (ChildWindow)this.ActiveMdiChild;
+                window.Save();
+            }
+            else
+            {
+                MessageBox.Show("Tölts be egy képet!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChildWindow window = (ChildWindow)this.ActiveMdiChild;
-            window.SaveAs();
+            ChildWindow window = null;
+            if (window != null)
+            {
+                window = (ChildWindow)this.ActiveMdiChild;
+                window.Save();
+            }
+            else
+            {
+                MessageBox.Show("Tölts be egy képet!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

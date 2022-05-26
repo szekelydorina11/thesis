@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="thesisUI.ChildWindow">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAYApAAACEAAAAgCEG0ECADIIQQAwAAAVAKChBIGCQ=</HashCode>
+      <FileName>ChildWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.MainForm" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQCgAgCAACEAgAACACCAhAECEIgAQAAAAAIAACEAAAA=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.NativeMethods">
+    <Position X="9.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NativeMethods.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Program">
+    <Position X="9.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Line">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAACAAAAAAAgAAAAAIAAAAAAAgAgAAAAAAAAAAA=</HashCode>
+      <FileName>UserControl1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.UserControl1">
+    <Position X="15.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEACAEAAAQAACAAAACABIAAAAAIEAIAAACAAA=</HashCode>
+      <FileName>UserControl1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="components" />
+      <Field Name="IsMouseDown" />
+      <Field Name="lines" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="thesisUI.Filters.ExtractChannelTransform">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Filters\ExtractChannelTransform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Filters.ImageTransformer">
+    <Position X="10.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Filters\ImageTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Filters.InverseTransform">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Filters\InverseTransform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Filters.SetBrightnessTransform">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Filters\SetBrightnessTransform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Filters.Transform" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Filters\Transform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Properties.Resources">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="thesisUI.Properties.Settings" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="thesisUI.LineUnderMouse" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>UserControl1.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="System.Boolean" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="System.ComponentModel.IContainer" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="thesisUI.Filters.Channel" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAABAAAAA=</HashCode>
+      <FileName>Filters\ExtractChannelTransform.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9.22" />
+</ClassDiagram>

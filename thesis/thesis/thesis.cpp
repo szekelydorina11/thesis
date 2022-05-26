@@ -8,10 +8,12 @@
 
 
 int imageProcess(char* path)
-//int imageProcess()
-//vector<uchar> imageProcess(char* path)
 {
+	DetectEdges::setImageName(path);
+	String imageName = DetectEdges::getImageName();
+
 	Mat imgResized, imgThre;
+	string process = "";
 
 	//std::string path = "d:\\egyetem\\playground\\xray.jpeg"; imgOriginal = imread(path);
 	//std::string path = "d:\\egyetem\\playground\\scan.png"; imgOriginal = imread(path);
@@ -35,9 +37,6 @@ int imageProcess(char* path)
 		return 1;
 	}
 
-
-	//double s = 0.5;
-
 	double scale = 1.;
 	double scaleY = 1.;
 
@@ -59,12 +58,12 @@ int imageProcess(char* path)
 	cout << "\nimgResized.size(): " << imgResized.size() << "\n";
 
 	// Preprpcessing - Step 1 
-	imgThre = DetectEdges::preProcessing(imgResized);
+	imgThre = DetectEdges::imageProcessing(imgResized);
 
 	// Get Contours - Biggest  - Step 2
 	vector<Point> initialPoints = DetectEdges::getContours(imgThre, imgResized);
 	DetectEdges::drawPoints(initialPoints, Scalar(0, 255, 0), imgResized);
-	vector<Point> docPoints = DetectEdges::reorder(initialPoints);
+	//vector<Point> docPoints = DetectEdges::reorder(initialPoints);
 	//DetectEdges::drawPoints(docPoints, Scalar(0, 255, 0));
 	cout << "initialPoints: " << initialPoints << "\n";
 	//cout << "docPoints: " << docPoints << "\n";
@@ -85,31 +84,12 @@ int imageProcess(char* path)
 
 	//return imgThre;
 
-	bool check = imwrite("imgThre.jpg", imgThre);
+	string str(path);
+	DetectEdges::saveImage(imgResized, "imgThre", str);
 
-	// if the image is not saved
-	if (check == false) {
-		cout << "Mission - Saving the image, FAILED" << endl;
-
-		// wait for any key to be pressed
-		cin.get();
-		return -1;
-	} else 
-		cout << "Saving the image, PASSED" << endl;
-	
-	check = imwrite("imgResized.jpg", imgResized);
-
-	if (check == false) {
-		cout << "Mission - Saving the image, FAILED" << endl;
-
-		// wait for any key to be pressed
-		cin.get();
-		return -1;
-	} else 
-		cout << "Saving the image, PASSED" << endl;
 
 	return 0;
-
+	
 	/////////////////////////
 
 	const int height = imgThre.size().height;
