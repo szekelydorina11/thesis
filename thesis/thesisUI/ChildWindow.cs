@@ -8,7 +8,15 @@ using System.Windows.Forms;
 namespace thesisUI
 {
     public partial class ChildWindow : Form
-    { 
+    {
+
+        private string m_fileName;
+        private Bitmap m_originalImage;
+        private Bitmap m_imgThre;
+        private Bitmap m_imgBlur;
+        private Bitmap m_imgCanny;
+        private Bitmap m_imgDilate;
+        private Bitmap m_imgErode;
 
         public ChildWindow(string fileName)
         {
@@ -77,14 +85,15 @@ namespace thesisUI
             pictureBox3.Image = m_imgCanny;
             pictureBox3.Visible = true;
 
-            new_file_name = result + "_Dilate.jpg";
-            m_imgDilate = new Bitmap(new_file_name);
-            pictureBox4.Image = m_imgDilate;
-            pictureBox4.Visible = true;
+            //new_file_name = result + "_Dilate.jpg";
+            //m_imgDilate = new Bitmap(new_file_name);
+            //pictureBox4.Image = m_imgDilate;
+            //pictureBox4.Visible = true;
 
-            /*new_file_name = result + "_Erode.jpg";
-            m_imgCanny = new Bitmap(new_file_name);
-            pictureBox2.Image = m_imgErode;*/
+            new_file_name = result + "_Erode.jpg";
+            m_imgErode = new Bitmap(new_file_name);
+            pictureBox4.Image = m_imgErode;
+            pictureBox4.Visible = true;
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -228,12 +237,7 @@ namespace thesisUI
             main.Image = ((PictureBox)sender).Image;
         }
 
-        private string m_fileName;
-        private Bitmap m_originalImage;
-        private Bitmap m_imgThre;
-        private Bitmap m_imgBlur;
-        private Bitmap m_imgCanny;
-        private Bitmap m_imgDilate;
+        
 
         private void trackBar1_MouseUp(object sender, MouseEventArgs e)
         {

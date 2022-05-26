@@ -14,7 +14,7 @@ namespace thesisUI
                 tileToolStripMenuItem.Enabled = false;
                 exitToolStripMenuItem.Enabled = false;
                 saveAsToolStripMenuItem.Enabled = false;
-                saveToolStripMenuItem.Enabled = false;
+                //saveToolStripMenuItem.Enabled = false;
                 windowsToolStripMenuItem.Enabled = false;
             }
             else
@@ -22,7 +22,8 @@ namespace thesisUI
                 tileToolStripMenuItem.Enabled = true;
                 exitToolStripMenuItem.Enabled = true;
                 saveAsToolStripMenuItem.Enabled = true;
-                saveToolStripMenuItem.Enabled = true;
+                //saveToolStripMenuItem.Enabled = true;
+                saveToolStripMenuItem.Visible = false;
                 windowsToolStripMenuItem.Enabled = true;
             }
         }
@@ -43,7 +44,8 @@ namespace thesisUI
                 tileToolStripMenuItem.Enabled = true;
                 exitToolStripMenuItem.Enabled = true;
                 saveAsToolStripMenuItem.Enabled = true;
-                saveToolStripMenuItem.Enabled = true;
+                //saveToolStripMenuItem.Enabled = true;
+                saveToolStripMenuItem.Visible = false;
                 windowsToolStripMenuItem.Enabled = true;
             }
         }
@@ -88,7 +90,8 @@ namespace thesisUI
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChildWindow window = null;
-            if (window != null) {
+            if (window != null)
+            {
                 window = (ChildWindow)this.ActiveMdiChild;
                 window.Save();
             }
